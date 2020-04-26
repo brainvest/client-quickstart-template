@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+	production: false,
+	apiServerRoot:  '/',
+    clientRoot: '/admin/',
+	auth: {
+		authority: 'https://my.enjoyn.ai/auth/',
+		redirect_uri: 'http://localhost:4200/auth-callback',
+		post_logout_redirect_uri: 'http://localhost:4200/',
+		silent_redirect_uri: 'http://localhost:4200/oidc-silent-refresh/index.html',
+		client_id: 'invoice'
+	},
 };
 
 /*

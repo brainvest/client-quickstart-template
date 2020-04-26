@@ -66,7 +66,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "client-quickstart-template:build"
+            "browserTarget": "client-quickstart-template:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -89,7 +90,9 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/oidc-silent-refresh/index.html",
+              "src/oidc-silent-refresh/oidc-client.min.js"
             ],
             "styles": [
               "src/styles.scss"
@@ -123,6 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "client-quickstart-template"
+    }
+  },
+  "defaultProject": "client-quickstart-template",
+  "cli": {
+    "analytics": "091b58c8-f342-4209-aec9-5d65e2bea40a"
+  }
 }
