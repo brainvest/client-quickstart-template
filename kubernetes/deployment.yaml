@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dscribeclient
+spec:
+  selector:
+    matchLabels:
+      app: dscribeclient
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app : dscribeclient  
+    spec:
+      containers:
+        - name: dscribeclient
+          image: registry.gitlab.com/yourproject/admin-client:0.1
+          imagePullPolicy: IfNotPresent
+          ports:
+          - containerPort: 80
+          resources:
+            limits:
+              cpu: 500m
+              memory: 500M
+            requests:
+              cpu: 150m
+              memory: 200M
+      imagePullSecrets:
+      - name: regcred
