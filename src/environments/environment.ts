@@ -3,18 +3,19 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+	appInstanceId: 1,
 	production: false,
-	apiServerRoot:  '/',
-    clientRoot: '/admin/',
+	apiServerRoot: '/',
 	auth: {
-		authority: 'https://my.enjoyn.ai/auth/',
-		redirect_uri: 'http://localhost:4200/auth-callback',
-		post_logout_redirect_uri: 'http://localhost:4200/',
-		silent_redirect_uri: 'http://localhost:4200/oidc-silent-refresh/index.html',
-		client_id: 'invoice'
+	  authority: 'https://my.enjoyn.ai/auth/realms/enjoyn',
+	  client_id: 'enjoyn',
+	  redirect_uri: 'http://localhost:4200/auth-callback',
+	  post_logout_redirect_uri: 'http://localhost:4200/',
+	  silent_redirect_uri: 'http://localhost:4200/oidc-silent-refresh/index.html',
 	},
-};
-
+  };
+//   import 'zone.js/dist/zone-error';
+  
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
